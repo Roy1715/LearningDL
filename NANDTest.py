@@ -11,7 +11,8 @@ def NAND(x1, x2):
     else :
         return 1
 
+print("NAND Start")
 for f1 in range(2):
     for f2 in range(2):
         print("in {},{} → out {}".format(f1,f2,NAND(f1,f2)) )
-
+print("NAND END")
