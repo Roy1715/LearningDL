@@ -18,7 +18,6 @@ test_acc_list=[]
 #1エポックあたりの繰り返し数
 iter_per_epoch=max(train_size/batch_size,1)
 
-
 network=TwoLayerNet(input_size=784,hidden_size=50,output_size=10)
 
 for i in range(iters_num):
@@ -28,8 +27,8 @@ for i in range(iters_num):
     t_batch=t_train[batch_mask]
 
     #勾配の計算
-    grad=network.numerical_gradient(x_batch,t_batch)
-    #grad=network.gradient(x_batch,t_batch) #高速版!
+    #grad=network.numerical_gradient(x_batch,t_batch)
+    grad=network.gradient(x_batch,t_batch) #高速版!
 
     #パラメータの更新
     for key in ('W1','b1','W2','b2'):
