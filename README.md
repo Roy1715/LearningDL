@@ -1,7 +1,5 @@
 # LearningDL
 
-## 概要
-
 これはO'Reilly Japanから出版されている「ゼロから作るDeep Learning」の個人的な自習コードです。
 
 
