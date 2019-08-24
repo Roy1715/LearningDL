@@ -1,5 +1,6 @@
 import numpy as np
 
+#np.set_printoptions(precision=0)
 
 def im2col(input_data, filter_h, filter_w, stride=1, pad=0):
     """
@@ -42,14 +43,17 @@ def im2col(input_data, filter_h, filter_w, stride=1, pad=0):
             col[:, :, y, x, :, :] = img[:, :, y:y_max:stride, x:x_max:stride]
             # print("\n\nimg[:, :, y:y_max:stride, x:x_max:stride]: " +
             #     str(img[:, :, y:y_max:stride, x:x_max:stride]))
-            print("\ncol: " + str(col[:, :, y, x, :, :]))
+            #print("\ncol: " + str(col[:, :, y, x, :, :]))
 
     col = col.transpose(0, 4, 5, 1, 2, 3).reshape(N * out_h * out_w, -1)
-    # print("\n\ncol.transpose: " + str(col))
+    print("\ncol.transpose: \n")
+    print(col)
+
+    print("\ncol.shape:"+str(col.shape))
 
     return col
 
 
-inputData = np.random.randn(1, 5, 4, 4)
+inputData = np.random.randn(1, 5, 6, 8)
 
-im2col(inputData, 2, 2)
+im2col(inputData, 3, 3)
